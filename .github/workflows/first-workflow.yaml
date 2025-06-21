@@ -19,7 +19,7 @@ jobs:
         - name: View System Information
           run: sw_vers
   dependant-job:
-    runs-on: windows-lates
+    runs-on: windows-latest
     needs: run-shell-commands
     steps:
       - name: Display Windows Version
@@ -34,5 +34,3 @@ jobs:
           Get-ChildItem
       - name: echo a string
         run: Write-Output "This is a Windows String"
-      - name: Error Step
-        run: doesnotexists
