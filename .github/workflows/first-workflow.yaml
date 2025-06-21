@@ -1,0 +1,15 @@
+name: First Workflow
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello, World!"
+      - name: Multiple commands
+        run: |
+          node -v
+          npm -v
+      - name: List files in the current directory
+        run: ls -la
