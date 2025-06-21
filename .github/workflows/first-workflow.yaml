@@ -19,7 +19,7 @@ jobs:
         - name: View System Information
           run: sw_vers
   dependant-job:
-    runs-on: windows-latest
+    runs-on: windows-lates
     needs: run-shell-commands
     steps:
       - name: Display Windows Version
