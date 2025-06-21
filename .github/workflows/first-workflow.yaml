@@ -33,4 +33,7 @@ jobs:
           Write-Host "This is a PowerShell command"
           Get-ChildItem
       - name: echo a string
-        run: Write-Output "This is a Windows String"
+        run: |
+            Write-Output "This is a Windows String"
+            ls -la
+
