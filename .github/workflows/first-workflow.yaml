@@ -13,3 +13,8 @@ jobs:
           npm -v
       - name: List files in the current directory
         run: ls -la
+  parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+        - name: View System Information
+          run: sw_vers
