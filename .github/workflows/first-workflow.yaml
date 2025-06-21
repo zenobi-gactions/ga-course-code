@@ -2,7 +2,7 @@ name: First Workflow
 on: [push]
 
 jobs:
-  run-shell-command:
+  run-shell-commands:
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string
@@ -18,3 +18,21 @@ jobs:
         steps:
         - name: View System Information
           run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+      - name: Display Windows Version
+        run: |
+          echo "Running on Windows"
+          systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+      - name: List files in the current directory
+        run: dir
+      - name: Run a PowerShell command
+        run: |
+          Write-Host "This is a PowerShell command"
+          Get-ChildItem
+      - name: echo a string
+        run: Write-Output "This is a Windows String"
+      - name: Error Step
+        run: doesnotexists
