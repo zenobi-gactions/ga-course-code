@@ -8,4 +8,4 @@ jobs:
       - name: Setting an error message
         run: echo "::error::Missing semicolon test"
       - name: Setting an error message with params
-        run: echo "::error title=Error Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing semicolon test with params"
+        run: echo "::error title=Error Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing semicolon with params"
