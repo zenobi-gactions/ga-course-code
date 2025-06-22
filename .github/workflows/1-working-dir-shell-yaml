@@ -1,5 +1,6 @@
 name: Work Dirs & Shell
 on: [push]
+
 jobs:
   display-wd-info:
     runs-on: ubuntu-latest
