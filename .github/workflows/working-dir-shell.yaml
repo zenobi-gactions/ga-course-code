@@ -35,6 +35,7 @@ jobs:
     steps:
       - name: Display Working Directory & List Files
         run: |
+          ls -la
           echo "Home Directory: $HOME"
           echo $GITHUB_SHA
           echo $GITHUB_WORKSPACE
