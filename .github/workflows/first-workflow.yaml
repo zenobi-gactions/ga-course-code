@@ -35,5 +35,5 @@ jobs:
       - name: echo a string
         run: |
             Write-Output "This is a Windows String"
-            doesnotexists
+
 
