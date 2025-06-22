@@ -14,10 +14,10 @@ jobs:
       - name: List files in the current directory
         run: ls -la
   parallel-job-macos:
-        runs-on: macos-latest
-        steps:
-        - name: View System Information
-          run: sw_vers
+    runs-on: macos-latest
+    steps:
+      - name: View System Information
+        run: sw_vers
   dependant-job:
     runs-on: windows-latest
     needs: run-shell-commands
