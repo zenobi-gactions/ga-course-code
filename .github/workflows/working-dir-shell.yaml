@@ -26,6 +26,9 @@ jobs:
       - name: Print current user
         run: |
           echo "Current User: $(whoami)"
+      - name: Change working directory
+        working-directory: /home/runner
+        run: pwd
       # - name: Print environment variables
       #   run: |
       #     printenv
