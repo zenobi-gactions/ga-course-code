@@ -19,15 +19,18 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
+      - name: Print Os Information
+        run: |
+          cat /etc/os-release
       - name: Print current user
         run: |
           echo "Current User: $(whoami)"
-      - name: Print environment variables
-        run: |
-          printenv
-      - name: List files in home directory
-        run: |
-          ls -la $HOME
+      # - name: Print environment variables
+      #   run: |
+      #     printenv
+      # - name: List files in home directory
+      #   run: |
+      #     ls -la $HOME
   display-wd-info-widnows:
     runs-on: windows-latest
     steps:
@@ -37,3 +40,6 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
+      - name: Print Os Information
+        run: |
+          cat /etc/os-release
