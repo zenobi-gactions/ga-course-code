@@ -1,5 +1,8 @@
 name: Work Dirs & Shell
-on: [push]
+on: 
+  push:
+    branches:
+      - main  
 
 jobs:
   display-wd-info:
