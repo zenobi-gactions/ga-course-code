@@ -21,4 +21,6 @@ jobs:
       - name: Echo a secret
         run: echo "Secret String"
       - name: Print working directory
-        run: pwd
+        run: |
+          pwd
+          ls -la
