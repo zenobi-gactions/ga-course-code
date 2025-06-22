@@ -39,6 +39,3 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
-      - name: Print Os Information
-        run: |
-          cat /etc/os-release
