@@ -39,4 +39,5 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REPOSITORY
-          ls -la
+          dir
+
