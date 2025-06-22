@@ -34,6 +34,9 @@ jobs:
       #     ls -la $HOME
   display-wd-info-widnows:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
     steps:
       - name: Display Working Directory & List Files
         run: |
@@ -43,4 +46,11 @@ jobs:
           echo $env:GITHUB_SHA
           echo $env:GITHUB_WORKSPACE
           echo $env:GITHUB_REPOSITORY
+      - name: Python Shell
+        shell: python
+        run: |
+          import platform
+          import os
+          print(f"OS: {platform.system()} {platform.release()}")
+          print(platform.processor())
 
