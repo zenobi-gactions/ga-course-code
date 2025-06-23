@@ -11,5 +11,5 @@ jobs:
         uses: actions/hello-world-javascript-action@e526212018eacabda2d44d9ff24c182ceb2b0fea
         with:
           who-to-greet: Andy
-      - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}"
+      # - name: Log Greeting Time
+      #   run: echo "${{ steps.greet.outputs.time }}"
