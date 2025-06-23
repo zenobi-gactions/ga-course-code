@@ -11,9 +11,9 @@ jobs:
       - name: List Files Before
         run: ls -a
 
-      - name: Run actions/checkout@v3
+      - name: Run actions/checkout@v4.2.2
 #        uses: actions/checkout@v4.2.2
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
       - name: List Files After
         run: ls -a
