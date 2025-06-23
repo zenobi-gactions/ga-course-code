@@ -1,8 +1,9 @@
 name: Checkout
-on: 
-  push:
-    branches:
-      - main
+on: [push]
+# on: 
+#   push:
+#     branches:
+#       - main
 
 jobs:
   auto_checkout-action:
