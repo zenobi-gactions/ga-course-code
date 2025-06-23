@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  checkout-action:
+  auto_checkout-action:
     runs-on: ubuntu-latest
     steps:
       - name: List Files Before
@@ -18,12 +18,12 @@ jobs:
       - name: List Files After
         run: ls -a
       
-  checkout-and-display-files:
+  manual-checkout-action:
     runs-on: ubuntu-latest
     steps:
       - name: List Files Before
         run: ls -a
-      - name: Checkout
+      - name: Manually Checkout
         run: |
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
