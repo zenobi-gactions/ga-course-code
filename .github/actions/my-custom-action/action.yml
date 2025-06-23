@@ -1,0 +1,21 @@
+# .github/actions/my-custom-action/action.yml
+
+name: "Say Hello Action"
+description: "Prints a custom greeting"
+inputs:
+  name:
+    description: "Name to greet"
+    required: true
+    default: "world"
+outputs:
+  time:
+    description: "The time the greeting was sent"
+runs:
+  using: "composite"
+  steps:
+    - name: Print greeting
+      run: echo "Hello, ${{ inputs.name }}!"
+    
+    - name: Set current time output
+      id: time
+      run: echo "time=$(date)" >> $GITHUB_OUTPUT
