@@ -1,5 +1,5 @@
 name: Checkout
-on: [push]
+on: push
 # on: 
 #   push:
 #     branches:
@@ -12,9 +12,9 @@ jobs:
       - name: List Files Before
         run: ls -a
 
-      - name: Run actions/checkout@v4.2.2
-#        uses: actions/checkout@v4.2.2
-        uses: actions/checkout@v4.2.2
+      - name: Run actions/checkout@v4
+#        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: List Files After
         run: ls -a
