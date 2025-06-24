@@ -1,9 +1,27 @@
 name:  Repository Events
 on: 
     push: # keyword sample As objects but can also be in Array e.g [push, pull_request]
-#        branches: [main, develop] # branches is listed as an Array
+      branches: 
+        - main
+        - "feature/**" # branches is listed as an Array that matches feature/featA, feature/featB, etc.
+        - "!feature/featC" # branches is listed as an Array that matches release/releaseA, release/releaseB, etc.
+      tags:
+        - "v1.*" # tags is listed as an Array that matches v1.0, v1.1, etc.
+        - "!v2.*" # tags is listed as an Array that matches v2.0, v2.1, etc.
+      paths:
+        - "src/**" # paths is listed as an Array that matches src/fileA, src/fileB, etc.
+        - "**.js"
+        - "!docs/**" # paths is listed as an Array that
+      # branches-ignore:
+      #   - develop
     pull_request: # keyword sample As objects
         types: [opened, synchronize, reopened, assigned] # types is listed as an Array
+        branches:
+          - main
+          - "feature/**" # branches is listed as an Array that matches feature/featA, feature/featB, etc.
+          - "!feature/featC" # branches is listed as an Array that matches release/releaseA, release/releaseB, etc.
+        paths:
+          - "**.js" # paths is listed as an Array that matches src/fileA.js, src/fileB.js, etc.
     issues: 
         types: [opened, edited, closed, reopened, assigned, unassigned]
 
