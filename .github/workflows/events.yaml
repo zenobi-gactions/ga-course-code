@@ -1,5 +1,12 @@
 name:  Repository Events
-on: [push, pull_request,issues]
+on: 
+    push: # keyword sample As objects but can also be in Array e.g [push, pull_request]
+#        branches: [main, develop] # branches is listed as an Array
+    pull_request: # keyword sample As objects
+        types: [opened, synchronize, reopened, assigned] # types is listed as an Array
+    issues: 
+        types: [opened, edited, closed, reopened, assigned, unassigned]
+
 
 jobs:
   checkout-test:
