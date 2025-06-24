@@ -5,9 +5,9 @@ on:
         - main
         - "feature/**" # branches is listed as an Array that matches feature/featA, feature/featB, etc.
         - "!feature/featC" # branches is listed as an Array that matches release/releaseA, release/releaseB, etc.
-      tags:
-        - "v1.*" # tags is listed as an Array that matches v1.0, v1.1, etc.
-        - "!v2.*" # tags is listed as an Array that matches v2.0, v2.1, etc.
+      # tags:
+      #   - "v1.*" # tags is listed as an Array that matches v1.0, v1.1, etc.
+      #   - "!v2.*" # tags is listed as an Array that matches v2.0, v2.1, etc.
       paths:
         - "src/**" # paths is listed as an Array that matches src/fileA, src/fileB, etc.
         - "**.js"
