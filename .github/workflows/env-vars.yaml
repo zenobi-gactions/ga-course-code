@@ -4,9 +4,15 @@ on:
     branches:
       - main
 
+env:
+  WF_LEVEL_ENV: "Available to all jobs" # Workflow level environment variable
+
 jobs: 
     env-vars-and-context:
         runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main' # Only run on main branch
+        env:
+          JOB_LEVEL_ENV: "Available to all steps in env-vars-and-context: job" # Job level environment variable
         steps:
           - name: Log ENV VAR
             run: |
@@ -18,4 +24,13 @@ jobs:
                 echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
                 echo '${{ github.ref }}'
                 echo '${{ github.sha }}'
-                
+            
+          - name: Log Custom Level ENV VAR
+            env:
+              STEP_LEVEL_ENV: "Available to this step only" # Custom level environment variable
+              WF_LEVEL_ENV: Overridden at step level
+            run: |
+                echo '${{ env.STEP_LEVEL_ENV }}'
+                echo $STEP_LEVEL_ENV
+                echo $WF_LEVEL_ENV
+                echo $JOB_LEVEL_ENV
