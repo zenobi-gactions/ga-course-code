@@ -31,7 +31,7 @@ jobs:
 
           - name: Multiline Env Var
             run: |
-                DEMILITER=1234
+                DEMILITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
                 echo "RANDOM_JOKE<<$DELIMITER" >> "$GITHUB_ENV"
                 echo "Here is a joke: " >> "$GITHUB_ENV"
                 curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
