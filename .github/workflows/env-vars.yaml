@@ -24,7 +24,10 @@ jobs:
                 echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
                 echo '${{ github.ref }}'
                 echo '${{ github.sha }}'
-            
+          - name: Set Env Var
+            run: |
+                echo "NEW_ENV_VAR=$(data)" >> $GITHUB_ENV
+
           - name: Log Custom Level ENV VAR
             env:
               STEP_LEVEL_ENV: "Available to this step only" # Custom level environment variable
@@ -34,3 +37,4 @@ jobs:
                 echo $STEP_LEVEL_ENV
                 echo $WF_LEVEL_ENV
                 echo $JOB_LEVEL_ENV
+                echo $GITHUB_ENV
