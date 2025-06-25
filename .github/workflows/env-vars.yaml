@@ -1,0 +1,20 @@
+name: Environment Variables
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+    env-vars-and-context:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Log ENV VAR
+            run: |
+                echo "GITHUB_REF: $GITHUB_REF"
+                echo "GITHUB_SHA: $GITHUB_SHA"
+          - name: Log Context
+            run: |
+                echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME"
+                echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+                echo '${{ github.ref }}'
+                
