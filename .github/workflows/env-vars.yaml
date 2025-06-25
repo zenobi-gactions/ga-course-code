@@ -31,13 +31,12 @@ jobs:
 
           - name: Multiline Env Var
             run: |
-                DEMILITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+                DEMILITER=1234
                 echo "RANDOM_JOKE<<$DELIMITER" >> "$GITHUB_ENV"
-                echo "Here is a joke for you:" >> "$GITHUB_ENV"
+                echo "Here is a joke: " >> "$GITHUB_ENV"
                 curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
                 echo "" >> "$GITHUB_ENV"
-
-                echo "$DEMILITER" >> "$GITHUB_ENV"
+                echo "$DELIMITER" >> "$GITHUB_ENV"
 
 
           - name: Log Custom Level ENV VAR
