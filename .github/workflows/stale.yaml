@@ -1,9 +1,8 @@
 name: Stale Issues & PRs
 on:
   schedule:
-    - cron: "0 14 * * *"
-    - cron: "*/5 * * * *" # JUST FOR TESTING TO SEE IF IT WORKS
-##   workflow_dispatch: {}
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
+    - cron: "0 14 * * *"   # Also runs daily at 2:00 PM UTC
 
 jobs:
   stale:
@@ -12,5 +11,5 @@ jobs:
       - uses: actions/stale@v9
         with:
           stale-issue-message: "This is some message."
-          days-before-stale:  1
+          days-before-stale: 1
           days-before-close: 7
