@@ -2,13 +2,13 @@ name: Matrix
 on: [push]
 
 #------- ORIGINAL --------#
-# X {os: ubuntu-latest, node-version: 14, is-ubuntu: true, experimental: false}
-# {os: ubuntu-latest, node-version: 15, is-ubuntu: true, experimental: false}
+# X {os: ubuntu-latest, node-version: 20, is-ubuntu: true, experimental: false}
+# {os: ubuntu-latest, node-version: 18, is-ubuntu: true, experimental: false}
 # {os: ubuntu-latest, node-version: 16, is-ubuntu: true, experimental: true}
-# {os: windows-latest, node-version: 14, experimental: false}
-# {os: windows-latest, node-version: 15, experimental: false}
+# {os: windows-latest, node-version: 20, experimental: false}
+# {os: windows-latest, node-version: 18, experimental: false}
 # {os: windows-latest, node-version: 16, experimental: false}
-# {os: macos-latest, node-version: 15}
+# {os: macos-latest, node-version: 18}
 # {os: ubuntu-latest, node-version: 17 }
 
 jobs:
@@ -17,12 +17,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node-version: [14, 15, 16]
+        node-version: [20, 18, 16]
         include:
           - os: ubuntu-latest
             is-ubuntu: true
           - os: macos-latest
-            node-version: 15
+            node-version: 18
           - experimental: false
           - os: ubuntu-latest
             node-version: 16
@@ -31,7 +31,7 @@ jobs:
             node-version: 17
         exclude:
           - os: ubuntu-latest
-            node-version: 14
+            node-version: 20
       fail-fast: false
       # max-parallel: 3
     runs-on: ${{ matrix.os }}
