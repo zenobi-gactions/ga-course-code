@@ -8,6 +8,7 @@ on:
 
 jobs:
     use-aios:
+        name: Use AIOS
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
