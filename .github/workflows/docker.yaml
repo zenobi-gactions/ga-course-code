@@ -29,11 +29,12 @@ jobs:
             
             - name: Checkout repository
               uses: actions/checkout@v4
-              
+
             - name: List Files 
               run: |
                 echo "Checking out the repository"
                 ls -al
+                tree .github
 
             - name: Log Env
               run: echo $API_URL
