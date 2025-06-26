@@ -6,12 +6,12 @@ on:
 
 jobs:
   node-matrix:
-    continue-on-error: false
+    continue-on-error: false # # This is the default behavior, but can be set to true to continue running jobs even if one fails.
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [16, 18, 20, 21]
-      fail-fast: false
+      fail-fast: false #     This is the default behavior, but can be set to true to stop all jobs if one fails.
       # max-parallel: 3
     runs-on: ${{ matrix.os }}
     steps:
