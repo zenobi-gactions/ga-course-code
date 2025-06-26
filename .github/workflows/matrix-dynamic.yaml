@@ -4,7 +4,7 @@ on:
     inputs:
       os:
         description: Operating Systems
-        default: "windows-latest,ubuntu-lates,macos-latest"
+        default: "windows-latest,ubuntu-latest,macos-latest"
         type: string
       node-version:
         description: Node Version
