@@ -50,11 +50,12 @@ jobs:
 
             - name: Python in step
               run: |
-                   import os
-                   print("Build triggered by:", os.environ.get('GITHUB_ACTOR'))
-                   import datetime
-                   build_id = f"1.0.{datetime.datetime.now().strftime('%Y%m%d%H%M')}"
-                   print(build_id)
+                echo 'import os' > script.py
+                echo 'import datetime' >> script.py
+                echo 'print("Build triggered by:", os.environ.get("GITHUB_ACTOR"))' >> script.py
+                echo 'build_id = f"1.0.{datetime.datetime.now().strftime(\"%Y%m%d%H%M\")}"' >> script.py
+                echo 'print(build_id)' >> script.py
+                python script.py
 
         
 
