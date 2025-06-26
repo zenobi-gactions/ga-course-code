@@ -1,6 +1,9 @@
 name: Share data between jobs
-
-on: [push]
+on:
+ workflow_dispatch:
+#   push:
+#     branches:
+#    
 
 jobs:
   job_1:
