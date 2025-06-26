@@ -1,0 +1,35 @@
+name: Docker
+on: 
+    workflow_dispatch:
+
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        container:
+          image: node:24.3.0-alpine
+            # credentials:
+            #     username: ${{ secrets.DOCKER_USERNAME }}
+            #     password: ${{ secrets.DOCKER_PASSWORD }}
+          env:
+            API_URL: development
+        #  options: --publish 80:80 --volume vol_name:/tmp --volume /host/path:/path/in/container --cpus 1
+### OR
+        #   ports:
+        #     - 80
+        #   volumes:
+        #     - vol_name:/tmp
+        #     - /host/path:/path/in/container
+
+        steps:
+            - name: Log Node OS Version
+              run: |
+                node -v
+                cat /etc/os-release
+            
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Log Env
+              run: echo $API_URL
+        
+
