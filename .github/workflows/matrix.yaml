@@ -1,0 +1,22 @@
+name: Matrix
+on: 
+    push: # keyword sample As objects but can also be in Array e.g [push, pull_request]
+      branches: 
+        - main
+
+jobs:
+  node-matrix:
+    continue-on-error: false
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [15, 16, 18, 20]
+      fail-fast: false
+      # max-parallel: 3
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: node -v
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node -v
