@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Cache and modules
               uses: actions/cache@v3
@@ -33,7 +33,7 @@ jobs:
                 path: coverage
                 retention-days: 10
             - name: Download Code Coverage
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                 name: code-coverage
                 path: code-coverage-report
