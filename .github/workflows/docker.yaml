@@ -38,5 +38,15 @@ jobs:
 
             - name: Log Env
               run: echo $API_URL
+            - name: Container in a Step
+              uses: docker://node:22.17-alpine3.21
+              with: 
+                entrypoint: /usr/local/bin/node
+                args: -p 2 + 3
+            - name: Log node version
+              uses: docker://node:22.17-alpine3.21
+              with: 
+                args: -v
+
         
 
