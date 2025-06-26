@@ -1,6 +1,10 @@
 name: Caching and Artifacts
 on:
-  workflow_dispatch:
+#  workflow_dispatch:
+  push:
+    branches:
+      - main
+
 
 jobs:
     use-aios:
